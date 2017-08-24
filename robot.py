@@ -60,7 +60,7 @@ def text_reply(msg):
             msg.user.send(reply_msg)
             # 调用函数返回撤回消息的内容
             reply_revoke(msg)
-        elif msg.msgType == settings.ITCHAT_MSGTYPE_CODE['common'] and msg.startswith('你已添加了'):
+        elif msg.msgType == settings.ITCHAT_MSGTYPE_CODE['common'] and msg.text.startswith('你已添加了'):
             # 添加好友成功，发送打招呼内容
             msg.user.send(settings.MSG_GREET)
     # 是应用分享内容，调用函数任务分类处理
