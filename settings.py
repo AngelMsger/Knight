@@ -16,6 +16,8 @@ LOGS_DIR = os.path.join(CACHE_DIR, 'logs')
 # 词云图片混存目录
 WORDCLOUD_DIR = os.path.join(CACHE_DIR, 'wordcloud')
 # 如果指定目录不存在则创建
+if not os.path.isdir(CACHE_DIR):
+    os.mkdir(CACHE_DIR)
 if not os.path.isdir(LOGS_DIR):
     os.mkdir(LOGS_DIR)
 if not os.path.isdir(WORDCLOUD_DIR):
@@ -76,13 +78,15 @@ CATEGORY_3_REPLY = ['四宅蒸鹅心！[机智][机智][机智]', '老哥，稳�
 # 资源文件名词典
 RESOURCES = {}
 # 资源匹配正则表达式
-_RESOURCES_PATTERN = re.compile(r'^([0-9a-zA-Z]+)_\d+\.(jpg|png)$')
+_RESOURCES_PATTERN = re.compile(r'^([0-9a-zA-Z]+)_\d+\.jpg$')
 
 # 根据资源匹配正则表达式加载合法资源
 for resource in (_RESOURCES_PATTERN.match(img) for img in os.listdir(ASSETS_DIR)):
     if resource:
         resource_path = os.path.join(ASSETS_DIR, resource.group(0))
         RESOURCES.setdefault(resource.group(1), []).append(resource_path)
+
+print(RESOURCES)
 
 # 根据需要开启命令行二维码
 try:
