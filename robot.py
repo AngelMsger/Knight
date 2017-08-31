@@ -29,7 +29,7 @@ __author__ = 'AngelMsger'
 def retreat():
     while settings.LAST_REPLY > datetime.datetime.now() - datetime.timedelta(seconds=settings.RETREAT_CYCLE):
         time.sleep(random.randint(0, settings.RETREAT_CYCLE))
-    settings.RETREAT_CYCLE = datetime.datetime.now()
+    settings.LAST_REPLY = datetime.datetime.now()
 
 
 # 注册文本，地图位置，名片，特殊提示及分享的回复函数
