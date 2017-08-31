@@ -1,5 +1,6 @@
 import os
 import re
+from datetime import datetime
 
 # 机器人名称，建议与图灵机器人API设置保持一致
 _ROBOT_NAME = os.environ.get('ROBOT_NAME', '蠢愚的骑士')
@@ -86,8 +87,6 @@ for resource in (_RESOURCES_PATTERN.match(img) for img in os.listdir(ASSETS_DIR)
         resource_path = os.path.join(ASSETS_DIR, resource.group(0))
         RESOURCES.setdefault(resource.group(1), []).append(resource_path)
 
-print(RESOURCES)
-
 # 根据需要开启命令行二维码
 try:
     CONSOLE_QR = int(os.environ.get('CONSOLE_QR', None))
@@ -111,3 +110,9 @@ ITCHAT_MSGTYPE_CODE = {
     'common': 10000,
     'revoke': 10002
 }
+
+# 全局时间变量，防止回复过快导致封禁
+LAST_REPLY = datetime.now()
+
+# 每次退避随机数上限
+RETREAT_CYCLE = 2

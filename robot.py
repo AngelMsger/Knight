@@ -6,6 +6,8 @@ import random
 import itchat
 from itchat.content import TEXT, MAP, CARD, NOTE, SHARING, PICTURE, \
     RECORDING, ATTACHMENT, VIDEO, FRIENDS
+import time
+import datetime
 
 import settings
 from models import session
@@ -22,12 +24,21 @@ __author__ = 'AngelMsger'
 """
 
 
+# 如果段时间内回复过消息，则随机退避一段时间后重试，直到成功
+# TODO：这不是一个很好的处理方式，有可能造成饥饿，待改进
+def retreat():
+    while settings.LAST_REPLY > datetime.datetime.now() - datetime.timedelta(seconds=settings.RETREAT_CYCLE):
+        time.sleep(random.randint(0, settings.RETREAT_CYCLE))
+    settings.RETREAT_CYCLE = datetime.datetime.now()
+
+
 # 注册文本，地图位置，名片，特殊提示及分享的回复函数
 @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING])
 def text_reply(msg):
     # 如果消息来自自己，则忽略，避免Bug
     if msg.fromUserName == itchat.originInstance.loginInfo['User']['UserName']:
         return
+    retreat()
     # 如果为文本类型的消息
     if msg.type == TEXT:
         # 如果唤醒关键词
