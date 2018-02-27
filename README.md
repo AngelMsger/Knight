@@ -1,8 +1,6 @@
 # Knight
 [![Build Status](https://travis-ci.org/AngelMsger/Knight.svg?branch=master)](https://travis-ci.org/AngelMsger/Knight)
 
-![Wechat](https://www.pressdispensary.co.uk/q991744/images/aco_bot.jpg)
-
 ## Overview
 Knight is a Simple Wechat Bot Demo. I Code This **Just for Fun** :).
 
