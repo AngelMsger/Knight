@@ -154,6 +154,7 @@ def reply_wordcloud(msg):
     except RuntimeError as e:
         msg.user.send(str(e))
 
+
 # GitHub仓库信息缓存于内存中，期限为2分钟
 repos_cache = {}
 

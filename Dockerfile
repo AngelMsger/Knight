@@ -1,12 +1,12 @@
 FROM python
 
-MAINTAINER AngelMsger
+MAINTAINER "i@AngelMsger"
 
 COPY . /app
 
 WORKDIR /app
 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+RUN pip install -r requirements.txt
 
 VOLUME ["/app/cache"]
 
