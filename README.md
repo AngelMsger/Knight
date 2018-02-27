@@ -1,4 +1,6 @@
 # Knight
+![WeChat](assets/revoke_2.jpg)
+
 [![Build Status](https://travis-ci.org/AngelMsger/Knight.svg?branch=master)](https://travis-ci.org/AngelMsger/Knight)
 
 ## Overview
