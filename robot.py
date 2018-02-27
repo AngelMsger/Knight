@@ -14,7 +14,7 @@ from models import session
 from tasks import reply_wordcloud, reply_keywords, reply_revoke, reply_file, \
     reply_text, reply_github_repos, reply_sharing
 
-__author__ = 'AngelMsger'
+__author__ = 'i@AngelMsger.Com'
 
 """
     NAME: Hawkin Robot
