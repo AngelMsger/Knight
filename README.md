@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/AngelMsger/Knight.svg?branch=master)](https://travis-ci.org/AngelMsger/Knight)
 
 ## Overview
+**Deprecated: Tencent Close Web Api to New Wechat User.**
 Knight is a Simple Wechat Bot Demo. I Code This **Just for Fun** :).
 
 ## Features
