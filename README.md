@@ -20,7 +20,7 @@ Knight is a Simple Wechat Bot Demo. I Code This **Just for Fun** :).
 4. Dockerized.
 5. **Funny**
 
-## Usage
+## ~~Usage~~
 **There is High Risks of Being Banned If You Change Login Location Frequently!**
 1. `docker run -itd --name=knight --restart=always -v /tmp:/app/cache -e "TULING123_API_KEY=你的API KEY" [-e "ROBOT_NAME=机器人名字"] [-e "GITHUB_ACCOUNT=你的GITHUB用户名"] [-e "DB_URI='数据库连接URI'"] angelmsger/knight`
 2. `docker logs knight`
