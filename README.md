@@ -7,6 +7,12 @@
 **Deprecated: Tencent Close Web Api to New Wechat User.**
 Knight is a Simple Wechat Bot Demo. I Code This **Just for Fun** :).
 
+![](screenshots/0.jpg)
+![](screenshots/1.jpg)
+![](screenshots/2.jpg)
+![](screenshots/3.jpg)
+![](screenshots/4.jpg)
+
 ## Features
 1. Support Most of Types of Wechat.
 2. Sharing Content Analyze.
@@ -28,4 +34,3 @@ Knight is a Simple Wechat Bot Demo. I Code This **Just for Fun** :).
 2. [jieba](https://github.com/fxsjy/jieba): Tokenizer
 3. [itchat](https://github.com/littlecodersh/ItChat): Wechat Web API
 4. [wordcloud](https://github.com/amueller/word_cloud): WordCloud Generator
-
